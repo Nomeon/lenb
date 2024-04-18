@@ -44,12 +44,12 @@
 	}
 </script>
 
-<section class="w-full flex flex-row p-4">
+<section class="w-full h-full grid grid-cols-6 grid-rows-2">
 	{#each columnItems as column (column.id)}
-		<div class="w-64 float-left border-2 p-4 m-2" animate:flip={{ duration: flipDurationMs }}>
-			<div class="flex justify-between">
-				<p class="font-bold">{column.name}</p>
-				{#if column.name !== 'Nog te plannen'}
+        <div class='overflow-hidden h-full p-4 border-2 {column.id === 0 ? 'row-span-2' : 'row-span-1'}' animate:flip={{ duration: flipDurationMs }}>
+            <div class="flex justify-between mb-2">
+				<p class="font-bold">{column.naam}</p>
+				{#if column.naam !== 'Nog te plannen'}
 					<span
 						>{column.items.reduce(
 							(acc, item) => acc + Math.round(item.Uren * 100) / 100,
@@ -58,9 +58,8 @@
 					>
 				{/if}
 			</div>
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div
-				class="h-full"
+            <div
+				class="h-full overflow-y-scroll no-scrollbar"
 				use:dndzone={{
 					items: column.items,
 					flipDurationMs,
@@ -70,9 +69,7 @@
 				on:finalize={(e) => handleDndFinalizeCards(column.id, e)}
 			>
 				{#each column.items as item (item.id)}
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<div class="m-2" animate:flip={{ duration: flipDurationMs }}>
+					<div animate:flip={{ duration: flipDurationMs }}>
 						<Card.Root>
 							<Collapsible.Root>
 								<Card.Content class="p-4">
@@ -100,6 +97,6 @@
 					</div>
 				{/each}
 			</div>
-		</div>
+        </div>
 	{/each}
 </section>

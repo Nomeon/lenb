@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+    directUrl = env("DIRECT_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Handeling {
+    id           Int       @id @default(autoincrement())
+    planpl       String
+    planpo       String
+    bewerking    String
+    bemand       Int
+    uren         Float
+    aantal       Int
+    matnr        String
+    omschrijving String
+    startdatum   DateTime?
+    einddatum    DateTime?
+    Machine      Machine?  @relation(fields: [machineId], references: [id])
+    machineId    Int?
+}
+
+model Machine {
+    id          Int         @id @default(autoincrement())
+    naam        String
+    capaciteit  Int
+    items       Handeling[]
+    Hal         Hal?         @relation(fields: [halId], references: [id])
+    halId       Int?
+}
+
+model Hal {
+    id         Int         @id @default(autoincrement())
+    afdeling   String
+    machines   Machine[]
+}
