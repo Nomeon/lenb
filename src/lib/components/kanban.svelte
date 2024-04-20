@@ -216,8 +216,9 @@
 				use:dndzone={{
 					items: column.items,
 					flipDurationMs,
-					dropFromOthersDisabled: checkIfDropDisabled(column.id) // check for dropDisabled
-				}}
+					dropFromOthersDisabled: checkIfDropDisabled(column.id), // check for dropDisabled
+                    dropTargetClasses: ['!outline-dashed', '!outline-primary/20', 'rounded-xl'],
+                }}
 				on:consider={(e) => handleSort(column.id, e)}
 				on:finalize={(e) => updateSort(column.id, e)}
 			>
