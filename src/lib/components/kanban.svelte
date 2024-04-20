@@ -5,10 +5,12 @@
 	import * as Collapsible from '$lib/components/ui/collapsible';
 	import { Button } from '$lib/components/ui/button';
 	import Icon from '@iconify/svelte';
+	import { read, utils, writeFile } from 'xlsx';
 
 	export let columnItems: any[];
 	const flipDurationMs = 100;
 	let dropDisabled: any = [];
+	let fileInput: HTMLInputElement;
 
 	$: {
 		if (columnItems) {
@@ -80,6 +82,15 @@
 			console.log('Error moving item');
 		}
 	}
+
+	const loadXLSX = async (e: any) => {
+		const file = e.target.files[0];
+		const fileContent = await file.arrayBuffer();
+		const workbook = read(fileContent);
+		const data = utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
+
+		console.log(data);
+	};
 </script>
 
 <section class="w-full h-full grid gap-2 p-2 grid-cols-6 grid-rows-2">
@@ -100,7 +111,21 @@
 					<span>{getColumnUren(column.id)}/{column.capaciteit}</span>
 				{:else}
 					<p class="font-bold flex items-center gap-2">{column.naam}</p>
-					<span>{getColumnUren(column.id)}</span>
+					<input
+						type="file"
+						accept=".xlsx"
+						bind:this={fileInput}
+						class="hidden"
+						on:change={(e) => loadXLSX(e)}
+					/>
+					<Button
+						on:click={() => {
+							fileInput.click();
+						}}
+						class="p-2"
+					>
+						Importeren
+					</Button>
 				{/if}
 			</div>
 			<div
