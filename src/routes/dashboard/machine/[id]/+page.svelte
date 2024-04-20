@@ -38,6 +38,7 @@
 		locale: 'nl-NL',
 		hiddenDays: [0, 6],
 		scrollTime: '07:00:00',
+        eventDurationEditable: false,
 		dateClick: function (info: any) {
 			dialogOpen = true;
 			selectedDate = info.dateStr;
@@ -200,7 +201,7 @@
 		<Dialog.Header>
 			<Dialog.Title>Kies een handeling om toe te voegen:</Dialog.Title>
 		</Dialog.Header>
-		<div class="flex flex-col gap-2">
+		<div class="flex flex-col gap-2 max-h-[600px] overflow-y-scroll">
 			{#each columnItems as item (item.id)}
 				{#if item.startdatum === null}
 					<Card.Root>

@@ -17,6 +17,7 @@ type Item = {
 	bewerking: string;
 	matnr: string;
 	omschrijving: string;
+    bemand: number;
 	aantal?: number;
 	startdatum?: Date | string | null;
 };
