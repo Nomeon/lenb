@@ -1,62 +1,62 @@
 [
-    {
-        "id": 1,
-        "naam": "Mazak VTC800",
-        "capaciteit": 168,
-        "items": []
-    },
-    {
-        "id": 2,
-        "naam": "Mazak VTC20B",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 3,
-        "naam": "Spinner VC750",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 4,
-        "naam": "Fehlmann P90-M",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 5,
-        "naam": "DMU 60EVO",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 6,
-        "naam": "DMU 40EVO",
-        "capaciteit": 168,
-        "items": []
-    },
-    {
-        "id": 7,
-        "naam": "Mazak FJV250",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 8,
-        "naam": "Mazak FJV200",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 9,
-        "naam": "Mazak FJV20",
-        "capaciteit": 40,
-        "items": []
-    },
-    {
-        "id": 10,
-        "naam": "Makino D500",
-        "capaciteit": 168,
-        "items": []
-    }
+	{
+		"id": 1,
+		"naam": "Mazak VTC800",
+		"capaciteit": 168,
+		"items": []
+	},
+	{
+		"id": 2,
+		"naam": "Mazak VTC20B",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 3,
+		"naam": "Spinner VC750",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 4,
+		"naam": "Fehlmann P90-M",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 5,
+		"naam": "DMU 60EVO",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 6,
+		"naam": "DMU 40EVO",
+		"capaciteit": 168,
+		"items": []
+	},
+	{
+		"id": 7,
+		"naam": "Mazak FJV250",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 8,
+		"naam": "Mazak FJV200",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 9,
+		"naam": "Mazak FJV20",
+		"capaciteit": 40,
+		"items": []
+	},
+	{
+		"id": 10,
+		"naam": "Makino D500",
+		"capaciteit": 168,
+		"items": []
+	}
 ]

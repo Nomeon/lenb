@@ -2,6 +2,6 @@
 	import '../app.css';
 </script>
 
-<main>
-    <slot />
+<main class="h-dvh overflow-hidden">
+	<slot />
 </main>

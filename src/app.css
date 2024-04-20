@@ -58,13 +58,35 @@
 }
 
 @layer utilities {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-   /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-  }
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}
+
+.ec {
+	height: 100%;
+}
+
+h2.ec-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.ec-toolbar {
+	align-items: start !important;
+}
+
+.ec-body {
+	border-width: 2px;
+	border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.ec-header {
+	border-radius: 0.75rem 0.75rem 0 0;
 }

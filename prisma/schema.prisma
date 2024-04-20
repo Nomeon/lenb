@@ -25,7 +25,6 @@ model Handeling {
     matnr        String
     omschrijving String
     startdatum   DateTime?
-    einddatum    DateTime?
     Machine      Machine?  @relation(fields: [machineId], references: [id])
     machineId    Int?
 }
